@@ -132,7 +132,7 @@
       this.listData.forEach ( (item,index) => {
         if( item.id == itemId ) {
           this.listData.splice( index, 1 )
-         // item.status = true
+          item.status = true
         }
       })
      // this.saveList()
