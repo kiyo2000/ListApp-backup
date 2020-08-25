@@ -71,7 +71,7 @@
             />
 
             {/* 16:09 Scanned through till here !!! */}
-            
+
             <RNPickerSelect
               items={this.dropdownItems}
               value={this.state.expenseCategory}
@@ -123,8 +123,20 @@
         category={item.category} 
         id={item.id}
         delete={this.removeItem}
+        buttonPressed={this.tickTheBox}
+        status = {item.status}
       />
     )
+
+    tickTheBox = ( itemId ) => {
+      this.listData.forEach ( (item) => {
+        if( item.id == itemId ) {
+          item.status = true
+        }
+
+      })
+
+    }
 
     removeItem = (itemId) => {
       this.listData.forEach( (item,index) => {
