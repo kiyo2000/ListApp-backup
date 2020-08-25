@@ -35,7 +35,7 @@
   /*Using a class*/
   export default class App extends Component {
     state ={
-      expenseAmount: 0,
+      expenseAmount: '',
       expenseCategory: '',
       validInput: false,
     }
@@ -129,13 +129,14 @@
     )
 
     tickTheBox = ( itemId ) => {
-      this.listData.forEach ( (item) => {
+      this.listData.forEach ( (item,index) => {
         if( item.id == itemId ) {
-          item.status = true
+          this.listData.splice( index, 1 )
+         // item.status = true
         }
-
       })
-
+     // this.saveList()
+      this.setState({expenseAmount:''})// 0 -> ''
     }
 
     removeItem = (itemId) => {
@@ -144,7 +145,7 @@
           this.listData.splice( index, 1 )
         }
       } )
-      this.setState({expenseAmount:0})
+      this.setState({expenseAmount:''})// 0 -> ''
     }   
     //   this.saveList()
     //   this.setState({expenseAmount:0})
@@ -153,7 +154,7 @@
     addItem = () => {
       if( 
         isNaN(this.state.expenseAmount) || 
-        this.state.expenseAmount == 0 ||
+       // this.state.expenseAmount == '' || // 0 -> ''
         this.state.expenseCategory == ''
       ) {
         return;
@@ -168,16 +169,16 @@
       this.sortList()// Adding a sort list in descending order
      //this.saveList()
       this.setState({
-        expenseAmount:0, 
+        expenseAmount:'', // 0 -> ''
         expenseCategory: null, 
         validInput: false, 
       })
       this._textInput.clear()
       this._textInput.focus()
     }
-
+//below -1 <- 0
     validate = () => {
-      if(this.state.expenseAmount > 0 && this.state.expenseCategory) {
+      if(this.state.expenseAmount > -1 && this.state.expenseCategory) {
         this.setState({validInput:true})
       }
     }
