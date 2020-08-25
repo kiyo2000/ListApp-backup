@@ -128,6 +128,7 @@
           this.listData.splice( index, 1 )
         }
       } )
+      this.setState({expenseAmount:0})
     }   
     //   this.saveList()
     //   this.setState({expenseAmount:0})
