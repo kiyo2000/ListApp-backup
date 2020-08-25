@@ -14,7 +14,7 @@ export const Item = ( props ) => {
         </View>
         {/* <TouchableOpacity onPress={ () => {props.delete( props.id ) } }> */}
         <TouchableOpacity onPress={() => {props.delete( props.id ) } }>
-            <Image style={itemStyles.icon} source={require('../assets/trash-alt-solid.png')} />
+            <Image style={itemStyles.icon} source={require('../assets/trash-color.png')} />
         </TouchableOpacity>
     </View>
   )
