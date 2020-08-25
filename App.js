@@ -13,6 +13,7 @@
     FlatList,
     TextInput,
     TouchableOpacity,
+    Button,
    // AsyncStorage,
     //Platform,
   } from 'react-native'
@@ -41,11 +42,16 @@
     listData = []
 
     dropdownItems =[
-      { label: 'Food', value: 'food'},
+      { label: 'Workout', value: 'workout'},
+      { label: 'Study', value: 'Study'},
+      { label: 'Pay Rent', value: 'pay rent'},
+      { label: 'Grocery Shopping', value: 'grocery'},
+      { label: 'Pay Bills', value: 'pay bills'},
+      { label: 'Entertainment', value: 'entertainment'},
+      { label: 'Medical Appointment', value: 'medical appointment'},
+      { label: 'Reading Books', value: 'reading books'},
       { label: 'Transport', value: 'transport'},
-      { label: 'Rent', value: 'rent'},
-      { label: 'Grocery', value: 'grocery'},
-      { label: 'Bills', value: 'bills'},
+      { label: 'Socialinsing', value: 'socialisng'},
     ]
 
     render() {
