@@ -58,60 +58,58 @@
       return (
         <SafeAreaView style={{flex:1}}>
           <View style={styles.main}>
-          <Text>- To Do List / Expense Tracker -</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="$ amount"
-            onChangeText={(text) =>
-              this.setState({ expenseAmount: parseFloat(text) }, () => {
-                this.validate()
-              })
-            }
-            keyboardType="number-pad"
-            ref={(input) => (this._textInput = input)}
-          />
-          <RNPickerSelect
-            items={this.dropdownItems}
-            value={this.state.expenseCategory}
-            onValueChange={(value) =>
-              this.setState({ expenseCategory: value }, () => {
-                this.validate()
-              })
-            }
-            useNativeAndroidPickerStyle={false}
-            style={pickerStyle}
-            placeholder = {pickerPlaceholder}
+            <Text>- To Do List / Expense Tracker -</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="$ amount"
+              onChangeText={(text) => this.setState({ expenseAmount: parseFloat(text) }, () => {
+                  this.validate()
+                })
+              }
+              keyboardType="number-pad"
+              ref={(input) => (this._textInput = input)}
             />
+
+            {/* 16:09 Scanned through till here !!! */}
+            
+            <RNPickerSelect
+              items={this.dropdownItems}
+              value={this.state.expenseCategory}
+              onValueChange={(value) =>
+                this.setState({ expenseCategory: value }, () => {
+                  this.validate()
+                })
+              }
+              useNativeAndroidPickerStyle={false}
+              style={pickerStyle}
+              placeholder = {pickerPlaceholder}
+              />
           </View>
-          {/* wrap the button in view*/}
-          {/* <View>
-            <TouchableOpacity 
-            style={ this.state.validInput ? styles.button : styles.buttonDisabled } 
-            onPress= {this.addItem}
-            disabled = { !this.state.validInput ? true : false} */}
-             <View style={styles.buttonView}>
-          <TouchableOpacity
-            style={
-              [
-                this.state.validInput ? styles.button : styles.buttonDisabled,
-                {borderRadius: 10}
-              ]
-            }
-            onPress={this.addItem}
-            disabled={!this.state.validInput ? true : false}
-            >
-              <Text style={styles.buttonText}>Add</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{flex:1}}>
-          <FlatList
-              data = {this.listData}
-              renderItem = {this.renderList}
-              keyExtractor = { item => item.id }
-              extraData = {this.state.expenseAmount}
-          />
-          </View>
-        </SafeAreaView>
+
+          <View style={styles.buttonView}>
+            <TouchableOpacity
+              style={
+                [
+                  this.state.validInput ? styles.button : styles.buttonDisabled,
+                  {borderRadius: 10}
+                ]
+              }
+              onPress={this.addItem}
+              disabled={!this.state.validInput ? true : false}
+              >
+                <Text style={styles.buttonText}>Add</Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={{flex:1}}>
+              <FlatList
+                  data = {this.listData}
+                  renderItem = {this.renderList}
+                  keyExtractor = { item => item.id }
+                  extraData = {this.state.expenseAmount}
+              />
+            </View>
+          </SafeAreaView>
       )
     }
 
