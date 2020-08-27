@@ -133,12 +133,12 @@
       this.listData.forEach ( (item,index) => {
         if( item.id == itemId ) {
           //this.listData.splice( index, 1 )
-          item.status = true
-          this.setState({})//calling an image object works?
+         //item.status = true
+          this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
         }
       })
      // this.saveList()
-     this.setState({})//calling an image object works?
+     this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
       this.setState({expenseAmount:''})// 0 -> ''
     }
 

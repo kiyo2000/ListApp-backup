@@ -18,7 +18,7 @@ export const Item = ( props ) => {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={ () => {props.buttonPressed( props.id ) } } >
-                <Image style={itemStyles.icon} source={require('../assets/checklist-icon.png')} />
+                <Image style={itemStyles.icon} source={require('../assets/red-circle.png')} />
             </TouchableOpacity>
 
     </View>
