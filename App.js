@@ -38,7 +38,7 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false, 
-      image: '../assets/checklist-icon.png',//testing for setting an image
+      //image: '../assets/checklist-icon.png',//testing for setting an image
     }
     listData = []
 
@@ -134,11 +134,11 @@
         if( item.id == itemId ) {
           //this.listData.splice( index, 1 )
          //item.status = true
-          this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
+          //this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
         }
       })
      // this.saveList()
-     this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
+     //this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
       this.setState({expenseAmount:''})// 0 -> ''
     }
 
