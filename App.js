@@ -37,7 +37,8 @@
     state ={
       expenseAmount: '',
       expenseCategory: '',
-      validInput: false,
+      validInput: false, 
+      image: '../assets/checklist-icon.png',//testing for setting an image
     }
     listData = []
 
@@ -131,11 +132,13 @@
     tickTheBox = ( itemId ) => {
       this.listData.forEach ( (item,index) => {
         if( item.id == itemId ) {
-          this.listData.splice( index, 1 )
+          //this.listData.splice( index, 1 )
           item.status = true
+          this.setState({})//calling an image object works?
         }
       })
      // this.saveList()
+     this.setState({})//calling an image object works?
       this.setState({expenseAmount:''})// 0 -> ''
     }
 
