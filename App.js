@@ -38,7 +38,7 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false, 
-      //image: '../assets/checklist-icon.png',//testing for setting an image
+      image: require('./assets/checklist-icon.png'),//testing for setting an image as a state
     }
     listData = []
 
