@@ -1,4 +1,4 @@
 export const colors =  {
-    primary: 'hsla(330, 38%, 65%, 1)',
-    primaryDisabled: 'hsla(330, 38%, 80%, 1)',
+    primary: 'hsla(160, 100%, 50%, 1)',
+    primaryDisabled: 'hsla(327, 100%, 45%, 1)',
   }

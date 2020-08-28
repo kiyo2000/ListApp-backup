@@ -23,9 +23,9 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    padding: 10,
+    padding: 15,
     backgroundColor: colors.primary,
-    marginVertical: 10,
+    marginVertical: 15,
   },
   buttonText: {
     color: 'white',
@@ -34,9 +34,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   buttonDisabled: {
-    padding: 15,
+    padding: 10,
     backgroundColor: colors.primaryDisabled,
-    marginVertical: 15,
+    marginVertical: 10,
   },
   listView: {
       flex: 1,
