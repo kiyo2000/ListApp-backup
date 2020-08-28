@@ -22,13 +22,14 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    padding: 15,
+    padding: 10,
     backgroundColor: colors.primary,
-    marginVertical: 15,
+    marginVertical: 10,
   },
   buttonText: {
     color: 'white',
     fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
   },
   buttonDisabled: {
