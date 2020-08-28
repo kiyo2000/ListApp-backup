@@ -71,8 +71,6 @@
               ref={(input) => (this._textInput = input)}
             />
 
-            {/* 16:09 Scanned through till here !!! */}
-
             <RNPickerSelect
               items={this.dropdownItems}
               value={this.state.expenseCategory}
@@ -108,6 +106,7 @@
                   renderItem = {this.renderList}
                   keyExtractor = { item => item.id }
                   extraData = {this.state.expenseAmount}
+                  extraData = {this.state.image}
               />
             </View>
           </SafeAreaView>
@@ -134,12 +133,11 @@
         if( item.id == itemId ) {
           //this.listData.splice( index, 1 )
          //item.status = true
-          //this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
+          this.setState({image: './assets/checklist-icon.png'})//calling an image object works?
         }
       })
      // this.saveList()
-     //this.setState({image: '../assets/checklist-icon.png'})//calling an image object works?
-      this.setState({expenseAmount:''})// 0 -> ''
+        this.setState({expenseAmount:''})// 0 -> ''
     }
 
     removeItem = (itemId) => {
