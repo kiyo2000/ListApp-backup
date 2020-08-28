@@ -106,13 +106,13 @@
                   renderItem = {this.renderList}
                   keyExtractor = { item => item.id }
                   extraData = {this.state.expenseAmount}
-                  extraData = {this.state.image}
               />
             </View>
           </SafeAreaView>
       )
     }
 
+    // Not using these codes below for own desgin purpose
     // componentDidMount(){
     //   this.loadList()
     // }
@@ -137,7 +137,7 @@
         }
       })
      // this.saveList()
-        this.setState({expenseAmount:''})// 0 -> ''
+        this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
     }
 
     removeItem = (itemId) => {
@@ -146,7 +146,7 @@
           this.listData.splice( index, 1 )
         }
       } )
-      this.setState({expenseAmount:''})// 0 -> ''
+      this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
     }   
     //   this.saveList()
     //   this.setState({expenseAmount:0})
@@ -170,14 +170,14 @@
       this.sortList()// Adding a sort list in descending order
      //this.saveList()
       this.setState({
-        expenseAmount:'', //Changed from 0 -> ''
+        expenseAmount:'', //Changed from 0 -> '' so that int 0 can be entered.
         expenseCategory: null, 
         validInput: false, 
       })
       this._textInput.clear()
       this._textInput.focus()
     }
-    //Changed int from 0 to -1
+    //Changed int from 0 to -1 so that int 0 can be entered.
     validate = () => {
       if(this.state.expenseAmount > -1 && this.state.expenseCategory) {
         this.setState({validInput:true})
