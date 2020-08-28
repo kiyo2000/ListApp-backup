@@ -9,7 +9,7 @@
     TextInput,
     TouchableOpacity,
     Button,
-    //AsyncStorage, // Not using for own coding
+    AsyncStorage, 
     //Platform,      // Not using for own coding
   } from 'react-native'
   /* End ------Added for code cleaning*/
@@ -33,7 +33,7 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false,
-     // flagImage:true,
+    //flagImage:true, // This did not work.
     }
     listData = []
 
@@ -118,33 +118,32 @@
         category={item.category} 
         id={item.id}
         delete={this.removeItem}
-        //change={this.changeImage}
+        //change={this.changeImage} // This did not work
         status = {item.status}
       />
     )
 
-    // // Testing
+    // Testing: Meant to be changing the exclamation image to ticked mark image by clicking
     // changeImage = ( itemId ) => {
     //     this.listData.forEach ( (item,index) => {
     //       if( item.id == itemId ) {
-    //         item.status = true
+    //         //experimenting
+    //         this.setState({
+    //           flagImage:!this.state.flagImage
+    //         });
+
     //       }
     //     })
+        
+    //     //Testing
+    //     this.setState({
+    //       flagImage:!this.state.flagImage
+    //     });
+
     //    // this.saveList()  Not using these codes below for own desgin purpose
-    //       this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
+    //    this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
     //   }
 
-    // // Meant to be changing the exclamation image to ticked mark image by clicking
-    // tickTheBox = ( itemId ) => {
-    //   this.listData.forEach ( (item,index) => {
-    //     if( item.id == itemId ) {
-    //       item.status = true
-    //       this.setState({image: './assets/checklist-icon.png'})//calling an image object works?
-    //     }
-    //   })
-    //  // this.saveList()  Not using these codes below for own desgin purpose
-    //     this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
-    // }
 
     removeItem = (itemId) => {
       this.listData.forEach( (item,index) => {
