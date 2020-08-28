@@ -5,11 +5,6 @@ import {itemStyles} from '../styles/Item';
 
 
 export const Item = ( props ) => {
-  state = {
-    flagImage:true
-  };
-
-
   return(
     <View style={itemStyles.item}>
       {/* <Text style={itemStyles.text}>{props.category}</Text>
@@ -23,14 +18,8 @@ export const Item = ( props ) => {
             <Image style={itemStyles.icon} source={require('../assets/trash-color.png')} />
         </TouchableOpacity>
 
-        {/* <TouchableOpacity onPress={ () => {props.change( props.id ) } } >
+        <TouchableOpacity onPress={ () => {props.change( props.id ) } } >
                 <Image style={itemStyles.icon} source={require('../assets/red-circle.png')} />
-            </TouchableOpacity> */}
-            <TouchableOpacity onPress={ this.changeImage } >
-                <Image style={itemStyles.icon} source={ this.state.flagImage === true ?
-                 require('../assets/red-circle.png') :
-                 require('../assets/checklist-icon.png')
-                } />
             </TouchableOpacity>
     </View>
   )
