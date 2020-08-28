@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderColor: colors.primary,
     borderWidth: 1,
+    borderRadius: 10,
     marginVertical: 15,
   },
   buttonView: {

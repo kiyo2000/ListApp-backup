@@ -29,7 +29,7 @@
     const pickerPlaceholder = {
     label: 'select category',
     value: null,
-    color: 'black'
+    color: 'black',
     }
 
   /*Using a class*/
