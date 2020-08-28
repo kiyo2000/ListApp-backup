@@ -132,7 +132,7 @@
       this.listData.forEach ( (item,index) => {
         if( item.id == itemId ) {
           //this.listData.splice( index, 1 )
-         //item.status = true
+          item.status = true
           this.setState({image: './assets/checklist-icon.png'})//calling an image object works?
         }
       })
@@ -155,7 +155,7 @@
     addItem = () => {
       if( 
         isNaN(this.state.expenseAmount) || 
-       // this.state.expenseAmount == '' || // 0 -> ''
+       // this.state.expenseAmount == '' || // 0 -> '' // Cut off this code so that int 0 can be entered.
         this.state.expenseCategory == ''
       ) {
         return;
@@ -170,14 +170,14 @@
       this.sortList()// Adding a sort list in descending order
      //this.saveList()
       this.setState({
-        expenseAmount:'', // 0 -> ''
+        expenseAmount:'', //Changed from 0 -> ''
         expenseCategory: null, 
         validInput: false, 
       })
       this._textInput.clear()
       this._textInput.focus()
     }
-//below -1 <- 0
+    //Changed int from 0 to -1
     validate = () => {
       if(this.state.expenseAmount > -1 && this.state.expenseCategory) {
         this.setState({validInput:true})
