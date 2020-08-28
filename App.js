@@ -119,20 +119,20 @@
         category={item.category} 
         id={item.id}
         delete={this.removeItem}
-        change={this.changeImage} // This did not work
+       // change={this.changeImage} // This did not work
         status = {item.status}
       />
     )
 
-    changeImage = ( itemId ) =>{
-      this.listData.forEach( (item) => {
-        if( item.id == itemId ) {
-          item.status = true
-        }
-      } )
-      this.saveList()
-      this.setState({taskName: null})
-  }
+  //   changeImage = ( itemId ) =>{
+  //     this.listData.forEach( (item) => {
+  //       if( item.id == itemId ) {
+  //         item.status = true
+  //       }
+  //     } )
+  //     this.saveList()
+  //     this.setState({taskName: null})
+  // }
 
     // Testing: Meant to be changing the exclamation image to ticked mark image by clicking
     // changeImage = ( itemId ) => {
@@ -163,7 +163,7 @@
           item.status = true
         }
       } )
-     // this.saveList()
+   
       this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
     }   
 
@@ -210,16 +210,17 @@
       } )
     }
 
-    saveList = async () => {
-      try {
-        await AsyncStorage.setItem(
-          'data',
-          JSON.stringify(this.listData)
-        )
-      }
-      catch( error ){
-        console.log(error)
-      } 
-    }
+    // Not using for own design
+    // saveList = async () => {
+    //   try {
+    //     await AsyncStorage.setItem(
+    //       'data',
+    //       JSON.stringify(this.listData)
+    //     )
+    //   }
+    //   catch( error ){
+    //     console.log(error)
+    //   } 
+    // }
 
   }
