@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
     // For using Platform module: 25 is to  clear the stuts bar
     paddingTop: Platform.OS == 'android' ? 25 : 0,
   },
+  title: {
+      fontSize: 20,
+      textAlign: "center"
+  },
   input: {
     width: '100%',
     padding: 10,
@@ -24,6 +28,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
+    fontSize: 20,
     textAlign: 'center',
   },
   buttonDisabled: {

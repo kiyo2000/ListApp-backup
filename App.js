@@ -59,7 +59,7 @@
       return (
         <SafeAreaView style={{flex:1}}>
           <View style={styles.main}>
-            <Text>- To Do List / Expense Tracker -</Text>
+            <Text style ={styles.title}>- To Do List / Expense Tracker -</Text>
             <TextInput
               style={styles.input}
               placeholder="$ amount"
