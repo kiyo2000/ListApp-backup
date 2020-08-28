@@ -32,7 +32,8 @@
     state ={
       expenseAmount: '',
       expenseCategory: '',
-      validInput: false, 
+      validInput: false,
+     // flagImage:true,
     }
     listData = []
 
@@ -117,27 +118,39 @@
         category={item.category} 
         id={item.id}
         delete={this.removeItem}
-        buttonPressed={this.tickTheBox}
+        //change={this.changeImage}
         status = {item.status}
       />
     )
 
-    // Meant to be changin the exclamation image to ticked mark image by clicking
-    tickTheBox = ( itemId ) => {
-      this.listData.forEach ( (item,index) => {
-        if( item.id == itemId ) {
-          item.status = true
-          this.setState({image: './assets/checklist-icon.png'})//calling an image object works?
-        }
-      })
-     // this.saveList()  Not using these codes below for own desgin purpose
-        this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
-    }
+    // // Testing
+    // changeImage = ( itemId ) => {
+    //     this.listData.forEach ( (item,index) => {
+    //       if( item.id == itemId ) {
+    //         item.status = true
+    //       }
+    //     })
+    //    // this.saveList()  Not using these codes below for own desgin purpose
+    //       this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
+    //   }
+
+    // // Meant to be changing the exclamation image to ticked mark image by clicking
+    // tickTheBox = ( itemId ) => {
+    //   this.listData.forEach ( (item,index) => {
+    //     if( item.id == itemId ) {
+    //       item.status = true
+    //       this.setState({image: './assets/checklist-icon.png'})//calling an image object works?
+    //     }
+    //   })
+    //  // this.saveList()  Not using these codes below for own desgin purpose
+    //     this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
+    // }
 
     removeItem = (itemId) => {
       this.listData.forEach( (item,index) => {
         if (item.id == itemId) {
           this.listData.splice( index, 1 )
+          item.status = true
         }
       } )
       this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
