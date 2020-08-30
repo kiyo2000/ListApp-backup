@@ -7,13 +7,10 @@ import {itemStyles} from '../styles/Item';
 export const Item = ( props ) => {
   return(
     <View style={itemStyles.item}>
-      {/* <Text style={itemStyles.text}>{props.category}</Text>
-      <Text style={itemStyles.text}>{props.amount}</Text> */}
         <View style={itemStyles.row}>
             <Text style={itemStyles.text}>{props.category}</Text>
             <Text style={itemStyles.text}>{props.amount}</Text>
         </View>
-        {/* <TouchableOpacity onPress={ () => {props.delete( props.id ) } }> */}
         <TouchableOpacity onPress={() => {props.delete( props.id ) } }>
             <Image style={itemStyles.icon} source={require('../assets/trash-color.png')} />
         </TouchableOpacity>
@@ -21,11 +18,6 @@ export const Item = ( props ) => {
                 <Image style={itemStyles.icon}  source={ props.status ? require('../assets/checklist-icon.png') :
                 require('../assets/red-circle.png')} />
             </TouchableOpacity>
-
-
-          {/* <TouchableOpacity onPress={ () => {props.change( props.id ) } } >
-                  <Image style={itemStyles.icon} source={require('../assets/red-circle.png')} />
-              </TouchableOpacity> */}
     </View>
   )
 }

@@ -118,10 +118,20 @@
         category={item.category} 
         id={item.id}
         delete={this.removeItem}
-        change={this.changeImage} // Not work
+        change={this.changeImage}
         status = {item.status}
       />
     )
+    
+    //Adding a strikethrough text upon clicking red-circle image
+    addStrikeThrough = ( itemId ) => {
+      this.listData.forEach ( (item,index) => {
+        if( item.id == itemId ) {
+          item.status = true
+        }
+      })
+      this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
+    }
 
     // Change the item status by image 
     changeImage = ( itemId ) => {
