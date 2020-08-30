@@ -34,8 +34,10 @@
       expenseCategory: '',
       validInput: false,
       flagImage: false,//Showing and changing an image
-      taskDone: false,//testing
+      taskDone: false,//For adding a strikethrough if the task is done // NOT WORKING!
     }
+
+
     listData = []
 
     dropdownItems =[
@@ -124,7 +126,8 @@
         status = {item.status}
       />
     )
-    
+
+    //For adding a strikethrough if the task is done // NOT WORKING!
     //Adding a strikethrough text upon clicking red-circle image
     addStrikeThrough = ( itemId ) => {
       this.listData.forEach ( (item,index) => {
@@ -139,7 +142,7 @@
     changeImage = ( itemId ) => {
         this.listData.forEach ( (item,index) => {
           if( item.id == itemId ) {
-            item.status = true
+            item.taskDone = true
           }
         })
         this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.

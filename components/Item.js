@@ -8,7 +8,7 @@ export const Item = ( props ) => {
   return(
     <View style={itemStyles.item}>
         <View style={itemStyles.row}>
-            <Text style={itemStyles.text, props.strikeThrough && {textDecorationLine: 'line-through'}}>{props.category}</Text>
+            <Text style={itemStyles.text, props.status && {textDecorationLine: 'line-through'}}>{props.category}</Text>
             <Text style={itemStyles.text}>{props.amount}</Text>
         </View>
         <TouchableOpacity onPress={() => {props.delete( props.id ) } }>
