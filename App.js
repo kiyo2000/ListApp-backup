@@ -33,7 +33,8 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false,
-      flagImage: false,//Showing and changing an image 
+      flagImage: false,//Showing and changing an image
+      taskDone: false,//testing
     }
     listData = []
 
@@ -119,6 +120,7 @@
         id={item.id}
         delete={this.removeItem}
         change={this.changeImage}
+        strikeThrough={this.addStrikeThrough}//testing
         status = {item.status}
       />
     )
