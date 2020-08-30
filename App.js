@@ -33,8 +33,7 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false,
-      showAlternateImage: false,//testing
-    //flagImage:true, // This did not work.
+      flagImage: false,//Showing and changing an image 
     }
     listData = []
 
@@ -124,20 +123,17 @@
       />
     )
 
-    // Testing: Not working. Trying to change the exclamation image to ticked mark image by clicking them.
+    // Change the item status by image 
     changeImage = ( itemId ) => {
         this.listData.forEach ( (item,index) => {
           if( item.id == itemId ) {
-            //experimenting
-            // this.setState({
-            //   flagImage:!this.state.flagImage
-            // });
             item.status = true
           }
         })
         this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
       }
-        
+    
+      // Delete the item from the list
     removeItem = (itemId) => {
       this.listData.forEach( (item,index) => {
         if (item.id == itemId) {
@@ -147,11 +143,6 @@
       })
       this.setState({expenseAmount:''})// Changed from 0 -> '' so that int 0 can be entered.
     }   
-
-    //Not using these codes below for own desgin purpose
-    //   this.saveList()
-    //   this.setState({expenseAmount:0})
-    // }
 
     addItem = () => {
       if( 
@@ -169,7 +160,6 @@
       }
       this.listData.push(listItem)
       this.sortList()// Adding a sort list in descending order
-     //this.saveList()
       this.setState({
         expenseAmount:'', //Changed from 0 -> '' so that int 0 can be entered.
         expenseCategory: null, 
@@ -190,18 +180,5 @@
         return item2.id - item1.id
       } )
     }
-
-    // Not using for own design
-    // saveList = async () => {
-    //   try {
-    //     await AsyncStorage.setItem(
-    //       'data',
-    //       JSON.stringify(this.listData)
-    //     )
-    //   }
-    //   catch( error ){
-    //     console.log(error)
-    //   } 
-    // }
 
   }

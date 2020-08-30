@@ -17,10 +17,15 @@ export const Item = ( props ) => {
         <TouchableOpacity onPress={() => {props.delete( props.id ) } }>
             <Image style={itemStyles.icon} source={require('../assets/trash-color.png')} />
         </TouchableOpacity>
-
         <TouchableOpacity onPress={ () => {props.change( props.id ) } } >
-                <Image style={itemStyles.icon} source={require('../assets/red-circle.png')} />
+                <Image style={itemStyles.icon}  source={ props.status ? require('../assets/checklist-icon.png') :
+                require('../assets/red-circle.png')} />
             </TouchableOpacity>
+
+
+          {/* <TouchableOpacity onPress={ () => {props.change( props.id ) } } >
+                  <Image style={itemStyles.icon} source={require('../assets/red-circle.png')} />
+              </TouchableOpacity> */}
     </View>
   )
 }
