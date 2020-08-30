@@ -33,6 +33,7 @@
       expenseAmount: '',
       expenseCategory: '',
       validInput: false,
+      showAlternateImage: false,//testing
     //flagImage:true, // This did not work.
     }
     listData = []
